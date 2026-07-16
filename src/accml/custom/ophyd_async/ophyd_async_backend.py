@@ -17,7 +17,9 @@ class OphydAsyncDeviceBackendR(BackendR):
 
     async def trigger(self, dev_id: str, prop_id: str):
         dev = self.devices.get(dev_id)
+        assert dev is not None, f"no device registered for {dev_id}"
         ch = getattr(dev, prop_id)
+        assert ch is not None, f"no channel {prop_id} registered for {dev_id}"
         try:
             trigger = ch.trigger
         except AttributeError:
@@ -45,6 +47,7 @@ class OphydAsyncDeviceBackendRW(OphydAsyncDeviceBackendR, BackendRW):
 
     async def set(self, dev_id: str, prop_id: str, value: object):
         dev = self.devices.get(dev_id)
+        assert dev is not None, f"no device registered for {dev_id}"
         ch = getattr(dev, prop_id)
         r = await ch.set(value)
         return r
