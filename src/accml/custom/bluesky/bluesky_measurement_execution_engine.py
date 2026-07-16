@@ -25,8 +25,8 @@ from accml_lib.core.interfaces.utils.devices_facade import DevicesFacade
 from accml_lib.core.interfaces.utils.measurement_execution_engine import (
     MeasurementExecutionEngine,
 )
-from accml_lib.core.model.utils.command import Command, ReadCommand, TransactionCommand
-from accml_lib.core.model.output.result import ReadTogether
+from dt4acc_lib.model.utils.command import Command, ReadCommand, TransactionCommand
+from dt4acc_lib.model.output.result import ReadTogether
 
 
 class BlueskyMeasurementExecutionEngine(MeasurementExecutionEngine):

@@ -2,8 +2,8 @@ import asyncio
 import itertools
 from typing import Sequence, Union
 
-from accml_lib.core.model.utils.command import TransactionCommand
 from accml_lib.core.model.utils.tango_resource_locator import TangoResourceLocator
+from dt4acc_lib.model.utils.command import TransactionCommand
 
 
 def extract_device_identifiers(commands_collection: Sequence[TransactionCommand]) -> Sequence[str]:

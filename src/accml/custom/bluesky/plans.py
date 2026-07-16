@@ -8,7 +8,7 @@ from ophyd_async.core import Device, Signal
 
 from accml.custom.bluesky.utils import as_json_compatible_device_id
 from accml_lib.core.bl.delta_backend import delta_property, StateCache
-from accml_lib.core.model.utils.command import Command, TransactionCommand, ReadCommand
+from dt4acc_lib.model.utils.command import TransactionCommand, Command, ReadCommand
 
 
 def transactional_commands_sequence_execution_plan(
